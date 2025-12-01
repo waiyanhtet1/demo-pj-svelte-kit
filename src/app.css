@@ -1,0 +1,19 @@
+body {
+    padding: 2rem;
+    background-color: bisque;
+}
+
+h1 {
+    line-height: 1;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+    color: #ff3e00;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
