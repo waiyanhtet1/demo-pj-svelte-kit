@@ -1,5 +1,5 @@
-import type { PageLoad } from "./$types";
 
+import type { PageLoad } from "./$types";
 
 type Character = {
     id: number;
@@ -9,15 +9,15 @@ type Character = {
 }
 
 
-const API = 'https://svelte.fun/api/bobs-burgers'; 
+const API = 'https://svelte.fun/api/bobs-burgers';
 
 export const load: PageLoad = async () => {
 
-const res = await fetch(`${API}/characters`);
-const characters: Character[] = await res.json();
+    const res = await fetch(`${API}/characters`);
+    const characters: Character[] = await res.json();
 
 
     return {
-         characters
+        characters
     }
 };
