@@ -1,5 +1,6 @@
+import { BASE_URL } from "$env/static/private";
 import { error } from "@sveltejs/kit";
-import type { PageLoad } from "../$types";
+import type { PageServerLoad } from "../$types";
 
 type CharacterType = {
     "id": number,
@@ -15,10 +16,12 @@ type CharacterType = {
     "relatives": []
 }
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params }) => {
     const id = (params as { id: string }).id;
 
-    const res = await fetch(`https://svelte.fun/api/bobs-burgers/characters/${id}`);
+    const res = await fetch(`${BASE_URL}/characters/${id}`);
+
+    console.log(`Fetching Character of ${id}`)
 
     if (!res.ok) {
         const err = await res.json();
