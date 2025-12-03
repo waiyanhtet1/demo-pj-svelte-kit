@@ -1,6 +1,4 @@
-import { BASE_URL } from "$env/static/private";
 import type { PageServerLoad } from "./$types";
-
 
 type Character = {
     id: number;
@@ -10,9 +8,8 @@ type Character = {
 }
 
 
-export const load: PageServerLoad = async () => {
-
-    const res = await fetch(`${BASE_URL}/characters`);
+export const load: PageServerLoad = async ({ fetch }) => {
+    const res = await fetch('/api/characters');
     const characters: Character[] = await res.json();
 
 

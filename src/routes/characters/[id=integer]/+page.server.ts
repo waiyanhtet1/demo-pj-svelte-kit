@@ -16,12 +16,12 @@ type CharacterType = {
     "relatives": []
 }
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params, fetch }) => {
     const id = (params as { id: string }).id;
 
     const res = await fetch(`${BASE_URL}/characters/${id}`);
+    // const res = await fetch(`/api/characters/${id}`)
 
-    console.log(`Fetching Character of ${id}`)
 
     if (!res.ok) {
         const err = await res.json();
