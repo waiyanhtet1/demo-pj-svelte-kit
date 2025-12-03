@@ -16,6 +16,9 @@
 	<li>
 		<a href="/characters">Characters</a>
 	</li>
+	<li>
+		<a href="/movies">Movies</a>
+	</li>
 </nav>
 
 <slot />
