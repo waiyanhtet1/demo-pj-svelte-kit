@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -19,6 +21,12 @@
 	<li>
 		<a href="/movies">Movies</a>
 	</li>
+	{#if data.user}
+		<a href="/profile">{data.user}</a>
+	{:else}
+		<a href="/login">Login</a>
+	{/if}
+	<li></li>
 </nav>
 
 <slot />

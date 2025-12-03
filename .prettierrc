@@ -12,6 +12,12 @@
 			"options": {
 				"parser": "svelte"
 			}
+		},
+		{
+			"files": ["*.ts" , "*.js"],
+			"options": {
+				"parser": "typescript"
+			}
 		}
 	]
 }
