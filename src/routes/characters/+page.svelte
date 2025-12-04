@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { fade, scale } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+
 	export let data;
 
 	$: characters = data.characters;
 </script>
 
-<h1 in:fade out:scale>Characters List</h1>
+<h1 in:fly={{ y: 50 }}>Characters List</h1>
 
 <div class="characters-list">
 	{#each characters as character}
